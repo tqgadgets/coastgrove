@@ -1,0 +1,36 @@
+.cg-motion-reveal > .cg-card {
+  height: 100%;
+}
+
+.cg-words-blur__word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.cg-draw-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--border);
+  transform-origin: left center;
+}
+
+@media (max-width: 899px) {
+  .cg-draw-line {
+    width: 2px;
+    height: 100%;
+    transform-origin: top center;
+  }
+}
+
+.zoom-clip-wrap {
+  overflow: clip;
+}
+
+.zoom-clip-wrap--card {
+  border-radius: var(--radius-card);
+}
+
+.quote-section__bg-zoom {
+  width: 100%;
+  height: 100%;
+}

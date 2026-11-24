@@ -1,0 +1,112 @@
+.marquee-band-wrap {
+  overflow-x: clip;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
+}
+
+.marquee-band {
+  background-color: var(--green-700);
+  color: var(--text-on-dark);
+  transform: rotate(-2deg);
+  margin-left: calc(var(--space-6) * -1);
+  margin-right: calc(var(--space-6) * -1);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .marquee-band {
+    height: 80px;
+  }
+}
+
+.marquee-band__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: cg-marquee 40s linear infinite;
+}
+
+.marquee-band:hover .marquee-band__track,
+.marquee-band:focus-within .marquee-band__track {
+  animation-play-state: paused;
+}
+
+.marquee-band__group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  padding-right: var(--space-7);
+  flex-shrink: 0;
+}
+
+.marquee-band__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-7);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-on-dark);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .marquee-band__item {
+    font-size: 32px;
+  }
+}
+
+.marquee-band__asterisk {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee-band__asterisk--white {
+  color: var(--text-on-dark);
+}
+
+.marquee-band__asterisk--lime {
+  color: var(--lime-400);
+}
+
+@keyframes cg-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-band {
+    height: auto;
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-4);
+  }
+
+  .marquee-band__track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .marquee-band__group {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+    gap: var(--space-4) var(--space-7);
+    max-width: 100%;
+  }
+
+  .marquee-band__group--duplicate {
+    display: none;
+  }
+}

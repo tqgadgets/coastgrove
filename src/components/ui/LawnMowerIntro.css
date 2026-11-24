@@ -1,0 +1,75 @@
+.lawn-intro {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  overflow: clip;
+  pointer-events: none;
+}
+
+.lawn-intro__grass {
+  position: absolute;
+  inset: 0;
+  background-color: #0E4F26;
+  will-change: clip-path;
+}
+
+.lawn-intro__grass-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lawn-intro__edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -16px;
+  width: 32px;
+  will-change: transform, opacity;
+}
+
+.lawn-intro__edge-svg {
+  display: block;
+  width: 32px;
+  height: 100%;
+}
+
+.lawn-intro__mower-track {
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+  will-change: transform, opacity;
+}
+
+.lawn-intro__mower-bob {
+  display: block;
+  animation: cg-mower-bob 0.18s ease-in-out infinite alternate;
+}
+
+.lawn-intro__mower-svg {
+  display: block;
+  width: 72px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .lawn-intro__mower-svg {
+    width: 112px;
+  }
+}
+
+@keyframes cg-mower-bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lawn-intro__mower-bob {
+    animation: none;
+    transform: none;
+  }
+}

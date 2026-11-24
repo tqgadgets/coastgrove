@@ -1,0 +1,114 @@
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: clip;
+}
+
+.bg-glow__blob-outer {
+  position: absolute;
+  width: var(--blob-size);
+  height: var(--blob-size);
+  top: calc(-0.5 * var(--blob-size));
+  left: calc(-0.5 * var(--blob-size));
+  will-change: transform;
+}
+
+.bg-glow__blob-outer--1 {
+  --blob-size: 360px;
+  transform: translate3d(10vw, 5vh, 0);
+}
+
+.bg-glow__blob-outer--2 {
+  --blob-size: 300px;
+  transform: translate3d(80vw, 20vh, 0);
+}
+
+.bg-glow__blob-outer--3 {
+  display: none;
+  --blob-size: 380px;
+  transform: translate3d(15vw, 85vh, 0);
+}
+
+@media (min-width: 640px) {
+  .bg-glow__blob-outer--1 {
+    --blob-size: 520px;
+  }
+
+  .bg-glow__blob-outer--2 {
+    --blob-size: 440px;
+  }
+
+  .bg-glow__blob-outer--3 {
+    display: block;
+  }
+}
+
+.bg-glow__blob-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.bg-glow__blob-inner--1 {
+  background: radial-gradient(
+    circle,
+    rgba(185, 224, 79, 0.28) 0%,
+    rgba(185, 224, 79, 0) 70%
+  );
+  animation: cg-glow-drift-1 18s ease-in-out infinite alternate;
+}
+
+.bg-glow__blob-inner--2 {
+  background: radial-gradient(
+    circle,
+    rgba(18, 118, 47, 0.22) 0%,
+    rgba(18, 118, 47, 0) 70%
+  );
+  animation: cg-glow-drift-2 24s ease-in-out infinite alternate;
+}
+
+.bg-glow__blob-inner--3 {
+  background: radial-gradient(
+    circle,
+    rgba(185, 224, 79, 0.18) 0%,
+    rgba(185, 224, 79, 0) 70%
+  );
+  animation: cg-glow-drift-3 30s ease-in-out infinite alternate;
+}
+
+@keyframes cg-glow-drift-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(24px, 18px, 0) scale(1.06);
+  }
+}
+
+@keyframes cg-glow-drift-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-22px, 20px, 0) scale(1.05);
+  }
+}
+
+@keyframes cg-glow-drift-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(20px, -22px, 0) scale(1.07);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-glow__blob-inner {
+    animation: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Coast & Grove",
+  "description": "Design system and style preview for Coast & Grove landscaping.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

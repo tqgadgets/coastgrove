@@ -1,0 +1,118 @@
+.site-footer {
+  background-color: var(--green-900);
+  color: var(--text-on-dark);
+  padding-top: var(--space-10);
+  padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    padding-top: var(--space-11);
+  }
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: var(--space-6);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+@media (min-width: 640px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-7);
+  }
+}
+
+@media (min-width: 960px) {
+  .site-footer__grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  }
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.site-footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--text-on-dark);
+}
+
+.site-footer__logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: var(--green-700);
+  color: var(--text-on-dark);
+}
+
+.site-footer__logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-on-dark);
+}
+
+.site-footer__tagline {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.site-footer__heading {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-on-dark);
+  margin-bottom: var(--space-4);
+}
+
+.site-footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.site-footer__link {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.site-footer__link:hover {
+  color: var(--lime-400);
+}
+
+.site-footer__contact-item {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.site-footer__bottom {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 639px) {
+  .site-footer__logo {
+    min-height: 44px;
+  }
+
+  .site-footer__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

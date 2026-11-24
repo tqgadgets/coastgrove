@@ -1,0 +1,46 @@
+.cg-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-btn);
+  background-color: var(--lime-400);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 200ms ease;
+}
+
+.cg-arrow-btn svg {
+  transition: transform 200ms ease;
+}
+
+.cg-arrow-btn:hover {
+  background-color: var(--lime-500);
+}
+
+@media (hover: hover) {
+  .cg-arrow-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .cg-arrow-btn:hover svg {
+    transform: translate(2px, -2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cg-arrow-btn,
+  .cg-arrow-btn svg {
+    transition: none;
+  }
+
+  .cg-arrow-btn:hover,
+  .cg-arrow-btn:hover svg {
+    transform: none;
+  }
+}

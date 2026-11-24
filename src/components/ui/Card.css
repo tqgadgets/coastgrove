@@ -1,0 +1,31 @@
+.cg-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+@media (min-width: 768px) {
+  .cg-card {
+    padding: var(--space-7);
+  }
+}
+
+@media (hover: hover) {
+  .cg-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(11, 61, 32, 0.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cg-card {
+    transition: none;
+  }
+
+  .cg-card:hover {
+    transform: none;
+  }
+}
